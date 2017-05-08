@@ -1,5 +1,5 @@
 import App from './App.vue'
 
-export default {
+export const components = {
   App
 }

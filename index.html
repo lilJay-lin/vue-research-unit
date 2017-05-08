@@ -10,9 +10,10 @@
     <div id="app"></div>
   </body>
   <script>
+    Vue.component('App', window.components.App);
     new Vue({
       render: function (h) {
-        h(window.default.App)
+        return h('App')
       },
       created: function (){
         console.log('created')
