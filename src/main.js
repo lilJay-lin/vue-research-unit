@@ -1,5 +1,5 @@
-import App from './App.vue'
+import UnitBanner from './unit-banner.vue'
 
 export const components = {
-  App
+  UnitBanner
 }

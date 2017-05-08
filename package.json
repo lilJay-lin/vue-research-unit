@@ -4,12 +4,13 @@
   "version": "1.0.0",
   "author": "lilJay-lin <lin_xjie@foxmail.com>",
   "private": true,
-  "main": "dist/build.js",
+  "main": "static/build.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "liljay-common-utils": "^1.1.1",
     "vue": "^2.2.1"
   },
   "devDependencies": {

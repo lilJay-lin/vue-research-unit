@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>vue-research-unit</title>
-    <script src="node_modules/vue/dist/vue.min.js"></script>
-    <script src="dist/build.js"></script>
+    <script src="/node_modules/vue/dist/vue.min.js"></script>
+    <script src="/node_modules/liljay-common-utils/dist/static/js/common.js"></script>
+    <script src="static/build.js"></script>
   </head>
   <body>
     <div id="app"></div>
   </body>
   <script>
-    Vue.component('App', window.components.App);
+    util.each(window.components, function (val, key) {
+      Vue.component(key, val);
+    })
     new Vue({
       render: function (h) {
-        return h('App')
+        return h('UnitBanner')
       },
       created: function (){
         console.log('created')
