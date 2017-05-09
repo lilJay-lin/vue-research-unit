@@ -5,6 +5,7 @@
 </template>
 <script type="text/ecmascript-6">
   export default {
+    label: '图片',
     props: {
       className: {
         type: String,

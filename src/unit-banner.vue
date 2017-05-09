@@ -7,6 +7,7 @@
 </template>
 <script type="text/ecmascript-6">
   export default {
+    label: 'Banner图',
     props: {
       className: {
         type: String,

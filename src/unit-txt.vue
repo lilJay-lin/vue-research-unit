@@ -3,6 +3,7 @@
 </template>
 <script type="text/ecmascript-6">
   export default {
+    label: '文本',
     props: {
       cssText: {
         type: String,
