@@ -2,25 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vue-research-unit</title>
+    <style>
+      *{padding:0;margin: 0;}
+      p{
+        padding: 20px 20px 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px dotted #000;
+      }
+      .unit{
+        display: inline-block;
+      }
+      .unit> a{
+        display: inline-block;
+        border: 1px solid #e2e2e2;
+        border-radius: 0.1rem;
+        font-size: 0.32rem;
+        color: #000;
+        padding: 0.15rem 0.25rem;
+        margin: 0.4rem;
+        text-decoration: none;
+      }
+      .unit> div{
+        display: none;
+      }
+    </style>
     <script src="/node_modules/vue/dist/vue.min.js"></script>
     <script src="/node_modules/liljay-common-utils/dist/static/js/common.js"></script>
     <script src="static/build.js"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <p>基础组件</p>
+      <div class="unit">
+        <a href="javascript:void(0)" @click.prevent="toggle">展开:图片</a>
+        <Unit-pic :css-text="'width: 300px'" :src="'static/assets/img/banner2.png'"></Unit-pic>
+      </div>
+      <div class="unit">
+        <a href="javascript:void(0)" @click.prevent="toggle">展开:文字</a>
+        <Unit-txt :text="'hello world!'" :css-text="'color: #fff;background: #000;'"></Unit-txt>
+      </div>
+
+      <p>复杂组件</p>
+      <div class="unit">
+        <a href="javascript:void(0)" @click.prevent="toggle">展开:banner图</a>
+        <Unit-Banner :link="'http://www.baidu.com'" :src="'static/assets/img/banner1.png'"></Unit-Banner>
+      </div>
+
+    </div>
   </body>
   <script>
     util.each(window.components, function (val, key) {
       Vue.component(key, val);
     })
     new Vue({
-      render: function (h) {
-        return h('UnitBanner')
-      },
+      el: '#app',
       created: function (){
         console.log('created')
+      },
+      methods: {
+        toggle: function(e) {
+          var p = e.target.parentNode;
+          var unit = p.querySelector('div');
+          util.isVisible(unit) ? util.hide(unit) : util.show(unit);
+        }
       }
-    }).$mount('#app')
+    })
   </script>
 </html>
