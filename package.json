@@ -3,7 +3,7 @@
   "description": "h5可视化配置组件",
   "version": "1.0.0",
   "author": "lilJay-lin <lin_xjie@foxmail.com>",
-  "private": true,
+  "private": false,
   "main": "static/build.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
