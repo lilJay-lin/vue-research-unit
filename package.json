@@ -1,7 +1,7 @@
 {
   "name": "vue-research-unit",
   "description": "h5可视化配置组件",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "lilJay-lin <lin_xjie@foxmail.com>",
   "private": false,
   "main": "static/build.js",
